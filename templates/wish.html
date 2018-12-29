@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% block body %}
+<style>
+header{
+	background-image: url('https://media.giphy.com/media/IjmMzurYulKEw/giphy.gif');
+	background-size: cover;
+	width: 100%;
+	height:98vh;
+	background-repeat: no-repeat;
+	background-position: left;
+
+}
+.mover{
+	padding-top: 10%;
+}
+.shadow{
+ color: white;
+    text-shadow:
+    -2px -1px 0 white,
+    2px -1px 0 white,
+    -2px 1px 0 white,
+    2px 1px 0 white;
+}  
+.colorchange{
+	animation:  colorchange 1s infinite;
+}
+
+@keyframes colorchange{
+	0%{color: red;}
+	25%{color:#bf55ec; ;}
+	50%{ color: white; }
+	100%{ color:#bf55ec;  }
+}
+
+.colorchange2{
+	animation:  colorchangee 1s infinite;
+}
+h1{
+	font-size: 60px;
+}
+.setter{
+	text-align: center;
+}
+.setter2{
+	padding-left:70%;
+}
+@keyframes colorchangee{
+	0%{color: orange;}
+	25%{color:brown; ;}
+	50%{ color: white; }
+	100%{ color:green;  }
+}
+.t-c{
+	text-align: center;
+	color: white;
+}
+
+@media only screen and (max-width: 768px) {
+
+	h1{
+		font-size: 34px;
+	}
+
+}
+</style>
+
+		<br><br>
+	{% if usrname %}
+	<header>
+		<div class="mover"></div>
+		<div>
+		<h1><div class="t-c animated jello infinite text-primary"><span>{{ usrname }}</span></div> <div class="setter text-white">wishing you<br> Happy New Year</div>
+		 <div class="t-c"> <span class="colorchange">{{ recv }}</span></div> </h1><br>
+		<div class="container">
+			<h5 class="text-white">
+		 Every New Year Gives you chance to Do do something and achive succes.Then Go and achive success<div class="text-right">-Nikhil</div>
+		</h5>
+		<h3 class="text-white">Create Your <a href="/wish">Link</a></h3>
+
+		<div class="fixed-bottom">
+		<a href="whatsapp://send?text={{ usrname }} want to wish you Happy New Year See at {{ url }}" data-action="share/whatsapp/share">
+		<button style="width: 100%" class="btn btn-success">Share Now on <img width="5%" src="https://image.flaticon.com/icons/svg/134/134937.svg"></button>
+		</a>
+		</div>
+		</div>
+	</header>
+
+  	{% else %}
+  	<div class="container">
+  		<br>
+  <h1>Create wishing card</h1>
+	<form action="/wish" method="get" class="form-group">
+		<label>Sender Name(your Name)</label>
+		<input type="text" class="form-control" name="username"><br>
+		<label>Reciver Name(your Friend Name) </label>
+		<input type="text" class="form-control" name="reciver"><br>
+		<input type="submit" class="btn btn-primary" name="submit" value="Submit">
+	</form>
+	</div>
+	<footer class="text-success mb-0 pb-0"><h3>Website is Made By 
+		<a href="/about">@Nikhil</a></h3></footer>
+   	{% endif %}
+{% endblock %}
+

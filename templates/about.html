@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<div class="container">
+<br><br> <br>
+<h1>About Me</h1>
+<img src="{{ url_for('static',filename='images/myphoto.jpg') }}"
+ hspace="10" class="float-right img-thumbnail" width="20%" alt="Myphoto">
+ <p> 
+<h3>Who I am</h3>
+I am NikhilRajPandey From India .
+I am 12 years old and I am studying in class VIII.
+I am intrested in programming or python programming and also this website made by python-flask.This is open source website
+and it was posted on <a href="#">github</a>.<br><br>
+<h3>Programming, Markup Languages That I know</h3>
+<div style="display: inline-flex;">Html,Css,Bootstrap,Javascript,
+</div>Jquery,
+<div style="display: inline-flex;">Python,Php and little Sql</div> </p>
+<div class="clearfix"></div>
+<h3>How I get Idea To make This website</h3>
+<p>One of My Friend named Sundaram send me a link of a wishing website on christmas like this then but When i open the website then I see that these website was not open source and they earned through the ads.<br>So I decided to make a small open source and ad free website.</p><br>
+<h3>Contact Me</h3>
+<p>Gmail-Id:nikhilrajpandey1@gmail.com<br>
+Github:<a href="https://github.com/nikhilrajpandey" target="_blank"><img width="5%" src="{{ url_for('static',filename='images/logo.png') }}">/nikhilrajpandey</a>
+<br>
+Youtube-channel:<a href="https://www.youtube.com/user/skpandeyg/videos" target="_blank">Hindustani Supporter</a>(shared with my brother)
+</p><br>
+<footer class="text-success mb-0 pb-0"><h3>Website is Made By 
+		<a href="/about">@Nikhil</a></h3></footer>
+</div>
+{% endblock %}
