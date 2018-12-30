@@ -1,5 +1,4 @@
 # Install flask if you have not installed
-# It will takes one ports
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
